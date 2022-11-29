@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function validate(){
+            var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+            var name = document.getElementById('name').value;
+            if(!regName.test(name)){
+                alert('Please enter your full name (first & last name).');
+                return false;
+            }else{
+                return true;
+            }
+        }
+        </script>
+
+    <style>
+        .button {
+            border-radius: 4px;
+            padding: 12px 28px;
+            background-color: #008CBA;
+
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .container {
+            margin: auto;
+            width: 50%;
+            /* border: 3px solid green; */
+            padding: 10px;
+        }
+
+        .headertekst {
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .navbar-custom {
+            background-color: #8fbc8f;
+            border: 3px solid #556b2f;
+            height: 1px;
+
+        }
+
+        .button1:active {
+            background-color: #f0e68c;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .navbar-custom {
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar-custom">
+        <div class="container-fluid">
+
+            <header>
+                <h2 class="headertekst"><b>Result Management System</b></h2>
+
+            </header>
+
+        </div>
+    </nav>
+
+    <body>
+        <a href="/home" style="float:right" class="button mt-4 mr-4">Logout</a><br /><br />
+        <a href="/teacher" style="float:left" class="button ml-4">Back</a>
+        <h2 align="center"><b>Update Record</b></h2>
+
+        <div class="container">
+            <form action="/update" method="post">
+                <input type="hidden" value="<%=user.id %>" name="id">
+                <div class="form-group">
+                    <label for="Rollno">Roll No:</label>
+                    <input type="number"   class="form-control" id="Rollno" placeholder="Enter Roll No (In Digits)"
+                        value="<%= user.Rollno %>" name="Rollno" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" pattern="^[A-Za-zÀ-ÿ ,.'-]+$"   placeholder="Enter Name" value="<%= user.name %>"
+                        name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date Of Birth:</label>
+                    <input type="date" class="form-control" id="date" pattern="\d{4}-\d{1,2}-\d{1,2}"  placeholder="Enter Date Of Birth in yyyy-mm-dd format"
+                    value="<%= user.date %>"    name="date"  required>
+                </div>
+
+                <div class="form-group">
+                    <label for="score">Score:</label>
+                    <input  type="number"  min="0" max="100" class="form-control" id="score" placeholder="Enter Score out of 100"
+                        value="<%= user.score %>" name="score" required>
+                </div>
+
+
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+
+    </body>
+</html>

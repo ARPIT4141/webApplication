@@ -1,0 +1,117 @@
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .button {
+            border-radius: 4px;
+            padding: 12px 28px;
+            background-color: #008CBA;
+
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .container {
+          
+            width:50%;
+            height:20px;
+            padding: 10px;
+        }
+
+        .navbar-custom {
+            background-color: #8fbc8f;
+          
+
+        }
+
+        .button1:active {
+            background-color: #f0e68c;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .navbar-custom {
+            height: 50px;
+        }
+
+        .headertekst {
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<nav class="navbar-custom">
+    <div class="container-fluid">
+
+        <header>
+            <h2 class="headertekst"><b>Result Management System</b></h2>
+
+        </header>
+
+    </div>
+</nav>
+
+<body>
+
+    <span><a href="/home" style="float:right" class="button mt-4 mr-4">Logout</a>
+        <a href="/" style="float:left" class="button mt-4 ml-4">Back</a></span>
+    <br>
+    <br>
+    <br>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <section class="vh-50 gradient-custom">
+    <div class="container py-5 h-20">
+      <div class="row d-flex justify-content-center align-items-center h-20">
+        <div class="col-10 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-2 pb-5">
+              
+                    <form action="/find" method="post">
+                <h2 class="fw-bold mb-2 text-uppercase">Login As Student</h2>
+                <p class="text-white-50 mb-5">Final Result</p>
+  
+                <div class="form-outline form-white mb-4">
+                  
+                  <input type="text" class="form-control" id="Rollno" placeholder="Enter Roll no" name="Rollno" required  >
+                  <label class="form-label" for="Rollno">Roll no</label>
+                </div>
+  
+                <div class="form-outline form-white mb-4">
+                  
+                  <input type="date" class="form-control" id="name" placeholder="Date of Birth" name="date"  required>
+                  <label class="form-label" for="date">Date</label>
+                </div>
+  
+                
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
